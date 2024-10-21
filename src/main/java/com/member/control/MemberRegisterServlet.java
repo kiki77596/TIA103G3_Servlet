@@ -83,9 +83,11 @@ public class MemberRegisterServlet extends HttpServlet {
             return;
         }
 
-        // 使用BCrypt加密密碼
-        String hashedPassword = BCrypt.hashpw(memberVO.getPassword(), BCrypt.gensalt());
-        memberVO.setPassword(hashedPassword);
+//      // 使用BCrypt加密密碼
+//      String hashedPassword = BCrypt.hashpw(memberVO.getPassword(), BCrypt.gensalt());
+//      memberVO.setPassword(hashedPassword);
+      String password = memberVO.getPassword();
+      memberVO.setPassword(password);
 
         // 插入會員資料到資料庫
         try {
